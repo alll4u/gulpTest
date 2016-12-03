@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西电主页header不完全仿冒</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="head-top">
+    <div style="width: 1150px; margin: 0 auto;">
+        <ul style="float: left">
+            <li>
+                <a href="#">记信箱</a>
+            </li>
+            <li>
+                <a href="#">dd校长信箱</a>
+            </li>
+            <li>
+                <a href="#">dd学生邮件</a>
+            </li>
+            <li>
+                <a href="#">dd教工邮件</a>
+            </li>
+        </ul>
+        <ul style="float: right">
+            <li>
+                <a href="#">信息公开</a>
+            </li>
+            <li>
+                <a href="#">综合信息网</a>
+            </li>
+            <li>
+                <span class="map"><a href="#">网站地图</a></span>
+            </li>
+            <li>
+                <span class="en"><a href="#">English</a></span>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="head" style="height: 124px">
+    <div class="container">
+        <div class="logo" style="height: 90px;width: 287px;padding-top: 10px;display: inline-block">
+            <a href="#" title="西安电子科技大学（新）"><img src="img/logo.png" border="0"></a>
+        </div>
+
+        <div class="logo-r" style="position: relative;top: -20px;right: -460px">
+            <span class="xs"><a href="#" class="logo-ra">学生</a></span>
+            <span class="jz"><a href="#" class="logo-ra">教职工</a></span>
+            <span class="xy"><a href="#" class="logo-ra">校友</a></span>
+            <span class="lf"><a href="#" class="logo-ra">来访者</a></span>
+        </div>
+
+        <div class="nav"
+            style="display: flex;flex-direction: row;justify-content:space-around; align-items:center; height: 34px">
+            <a href="#" title="学校概况">学校概况</a>
+            <a href="#" title="学校概况">院部设置</a>
+            <a href="#" title="学校概况">组织机构</a>
+            <a href="#" title="学校概况">教育教学</a>
+            <a href="#" title="学校概况">科学研究</a>
+            <a href="#" title="学校概况">学科建设</a>
+            <a href="#" title="学校概况">合作交流</a>
+            <a href="#" title="学校概况">招生就业</a>
+            <a href="#" title="学校概况">人才招聘</a>
+            <a href="#" title="学校概况">办学资源</a>
+            <a href="#" title="学校概况">图书馆</a>
+        </div>
+
+        <div class="sub-nav"
+             style="display: none; position: absolute;width: 1150px; height: 250px;background-color: rgba(255,255,255,0.65)">
+            <div style="display: flex;flex-direction: row;justify-content:space-around; align-items:center;">
+                <ul style="display: flex; flex-direction: column;justify-content: space-around;height: 220px">
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                    <li>学校概况</li>
+                </ul>
+                <img src="img/img_test2.jpg" width="150" height="150" style="border-radius: 33px;">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="head-img">
+
+    <div class="container" style="height: 390px;overflow: hidden">
+        <a id="img_url" target="_blank" href="#">
+            <img id="img" border="0" width="1150" height="390" src="img/img_1.jpg">
+        </a>
+        <div style="height:50px;left:80px;width:650px;overflow:hidden;position:relative;text-align:left;top:-50px;background-color: rgba(0,0,0,0.3)">
+            <div align="left;" style="overflow:hidden;height:40px;line-height:40px;margin-left:30px;padding:0 30px;">
+                <a id="title" href="#" title="诚邀全球英才参加西安电子科技大学“华山青年学者国际论坛”">诚邀全球英才参加西安电子科技大学“华山青年学者国际论坛”</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var currentIndex = 0;
+    var imgs = ["img_1.jpg", "img_2.jpg", "img_3.jpg", "img_4.jpg", "img_5.jpg", "img_6.jpg"];
+    var titleArray = ["向长征致敬——理想信念的伟大远征", "“互联网+”大赛西电再获金奖 下届将在西电举办", "天宫二号伴星释放 星载图像压缩系统由西电研制",
+        "诚邀全球英才参加西安电子科技大学“华山青年学者国际论坛”", "我校图书馆被中图学会命名为全民阅读示范基地", "我校研究生在中国研究生电子设计竞赛中获佳绩"];
+    addpage();
+
+    var int = self.setInterval("IntervalEvent()", 2000);
+
+    //hoverevent
+    var lista = document.querySelectorAll(".logo-r a");
+    lista.forEach(function (v, k) {
+        v.onmouseover = function () {
+            v.className = "logo-ra-active"
+        };
+
+        v.onmouseout = function () {
+            v.className = "logo-ra"
+        };
+    });
+
+    //sub van
+    var subnav = document.querySelector(".sub-nav");
+    var nav = document.querySelector(".nav");
+    var navs = nav.querySelectorAll("a");
+
+    var isMouseOnSubNav = false;
+
+    subnav.onmouseover = function () {
+        isMouseOnSubNav = true;
+        subnav.style.display = 'block';
+    };
+
+    subnav.onmouseout = function () {
+        isMouseOnSubNav = false;
+        subnav.style.display = 'none';
+    };
+
+    navs.forEach(function (v, k) {
+        v.onmouseover = function () {
+            subnav.top = nav.offsetTop+nav.offsetHeight+'px';
+            subnav.left = nav.left+'px';
+            subnav.style.display = 'block';
+        };
+
+        v.onmouseout = function () {
+            if(!isMouseOnSubNav){
+                subnav.style.display = 'none';
+            }
+        };
+    });
+
+
+    function IntervalEvent() {
+        var index = currentIndex + 1;
+        if (index >= imgs.length) {
+            index = 0;
+        }
+        switchImg(index)
+    }
+
+    var img = document.querySelector("#img");
+    img.onmouseover = function () {
+        console.log("onmouseup");
+        int = window.clearInterval(int);
+    };
+
+    img.onmouseout = function () {
+        console.log("onmouseout");
+        int = self.setInterval("IntervalEvent()", 2000);
+    };
+
+    //
+
+    function addpage() {
+        var div = document.createElement("div");
+        div.id = "pager";
+        div.className = "pager";
+
+        var htmlstr = '<ul class="pager-ul">';
+        for (var i = 0; i < this.imgs.length; i++) {
+            htmlstr += '<li>' + (i + 1) + '</li>';
+        }
+        htmlstr += '</ul></div>';
+        div.innerHTML = htmlstr;
+
+        var img = document.querySelector("#img");
+
+
+        div.style.position = 'absolute';
+        div.style.left = (img.offsetLeft + img.offsetWidth - 125) + 'px';
+        div.style.top = (img.offsetTop + img.offsetHeight - 25) + 'px';
+        document.querySelector(".head-img").appendChild(div);
+
+        var lis = div.querySelectorAll("#pager li");
+        lis.forEach(function (v, k) {
+            v.addEventListener("click", function () {
+                if (currentIndex != k) {
+                    switchImg(k);
+                }
+            })
+        });
+
+        switchImg(0);
+    }
+
+    function switchImg(index) {
+        var img = document.getElementById("img");
+        img.src = 'img/' + imgs[index];
+        var lis = document.querySelectorAll("#pager li");
+        lis[currentIndex].className = "";
+        lis[index].className = "pager_select";
+        currentIndex = index;
+
+        var img_title = document.querySelector("#title");
+        img_title.title = titleArray[index];
+        img_title.innerText = titleArray[index];
+    }
+</script>
+
+</body>
+</html>
